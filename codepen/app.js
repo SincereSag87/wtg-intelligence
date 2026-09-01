@@ -1,6 +1,6 @@
-import React, { useEffect, useMemo, useRef, useState } from "https://esm.sh/react";
-import { createRoot } from "https://esm.sh/react-dom/client";
-
+const React = window.React;
+const { useEffect, useMemo, useRef, useState } = React;
+const { createRoot } = window.ReactDOM;
 const h = React.createElement;
 
 const pages = ["Overview", "Forecasting", "AI Insights", "Reports", "Settings"];
