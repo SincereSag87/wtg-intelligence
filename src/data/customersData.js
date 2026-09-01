@@ -1,0 +1,421 @@
+import { BadgeDollarSign, HeartPulse, ShieldAlert, TrendingUp, UsersRound, WalletCards } from 'lucide-react';
+
+export const customerDateRanges = ['Last 30 Days', 'Quarter to Date', 'Last 6 Months', 'Year to Date'];
+export const customerSegments = ['All Segments', 'Enterprise', 'Mid-Market', 'SMB'];
+export const customerRegions = ['All Regions', 'Northeast', 'Southeast', 'Midwest', 'West', 'International'];
+export const customerHealthOptions = ['All Health', 'Healthy', 'Watch', 'At Risk'];
+export const lifecycleStages = ['All Stages', 'Onboarding', 'Adoption', 'Growth', 'Expansion', 'Renewal', 'Risk'];
+
+export const customerKpis = [
+  { label: 'Active Customers', value: '1,842', change: '+6.8%', context: 'active commercial accounts', tone: 'customer', Icon: UsersRound, sparkline: 'M0 28 C10 22 19 24 30 18 C41 12 50 13 60 8' },
+  { label: 'Customer Retention', value: '94.8%', change: '+1.6%', context: 'gross logo retention', tone: 'operations', Icon: HeartPulse, sparkline: 'M0 21 C10 18 18 21 29 17 C40 13 49 12 60 10' },
+  { label: 'Net Revenue Retention', value: '112.4%', change: '+4.1%', context: 'expansion-adjusted', tone: 'revenue', Icon: TrendingUp, sparkline: 'M0 33 C9 29 17 24 27 21 C39 14 48 11 60 7' },
+  { label: 'Expansion Revenue', value: '$1.14M', change: '+24.9%', context: 'existing account growth', tone: 'ai', Icon: BadgeDollarSign, sparkline: 'M0 34 C10 31 17 25 27 24 C38 22 47 12 60 7' },
+  { label: 'Accounts at Risk', value: '24', change: '-8', context: 'active churn watchlist', tone: 'margin', Icon: ShieldAlert, sparkline: 'M0 12 C10 15 17 15 29 20 C40 26 49 25 60 31' },
+  { label: 'Customer Health Score', value: '88 / 100', change: '+3', context: 'portfolio weighted score', tone: 'forecast', Icon: WalletCards, sparkline: 'M0 26 C12 22 18 23 29 18 C40 13 50 12 60 9' },
+];
+
+export const healthDistribution = [
+  { label: 'Healthy', percent: 74, accounts: 1363, revenue: '$6.72M', trend: '+5.4%' },
+  { label: 'Watch', percent: 19, accounts: 350, revenue: '$1.32M', trend: '-1.1%' },
+  { label: 'At Risk', percent: 7, accounts: 129, revenue: '$384K', trend: '-3.6%' },
+];
+
+export const healthTrend = [
+  { period: 'Apr', healthy: 68, watch: 23, risk: 9 },
+  { period: 'May', healthy: 69, watch: 22, risk: 9 },
+  { period: 'Jun', healthy: 71, watch: 21, risk: 8 },
+  { period: 'Jul', healthy: 72, watch: 20, risk: 8 },
+  { period: 'Aug', healthy: 73, watch: 20, risk: 7 },
+  { period: 'Sep', healthy: 74, watch: 19, risk: 7 },
+];
+
+export const segmentPerformance = [
+  { segment: 'Enterprise', customers: 482, revenue: '$5.34M', retention: 96.7, nrr: 118.6, expansion: '$812K', healthScore: 91, churnRisk: 'Low' },
+  { segment: 'Mid-Market', customers: 784, revenue: '$2.18M', retention: 93.9, nrr: 108.4, expansion: '$248K', healthScore: 86, churnRisk: 'Medium' },
+  { segment: 'SMB', customers: 576, revenue: '$900K', retention: 89.8, nrr: 101.7, expansion: '$80K', healthScore: 79, churnRisk: 'Medium' },
+];
+
+export const segmentSorters = {
+  Customers: (item) => item.customers,
+  Retention: (item) => item.retention,
+  NRR: (item) => item.nrr,
+  'Health Score': (item) => item.healthScore,
+};
+
+export const customerAccounts = [
+  {
+    id: 'northstar-logistics',
+    customer: 'Northstar Logistics',
+    segment: 'Enterprise',
+    region: 'Northeast',
+    revenue: 428000,
+    health: 'Healthy',
+    healthScore: 92,
+    retentionRisk: 'Low',
+    expansionPotential: 84000,
+    lifecycle: 'Expansion',
+    renewal: '2026-12-18',
+    owner: 'Maya Chen',
+    trend: [58, 62, 66, 69, 72, 76],
+    engagement: [71, 73, 76, 78, 81, 85],
+    adoption: [
+      { label: 'Core Platform', value: 94 },
+      { label: 'Analytics', value: 87 },
+      { label: 'Automation', value: 64 },
+      { label: 'AI Insights', value: 58 },
+      { label: 'Premium Support', value: 82 },
+    ],
+    support: { volume: '18 tickets', resolution: '96%', escalation: '2.1%', response: '14 min' },
+    timeline: ['Expansion signal detected', 'Executive QBR completed', 'Forecasting pilot converted', 'Renewal review scheduled'],
+    opportunities: ['Add automation package to logistics workflows', 'Expand AI Insights to finance leadership'],
+    risks: ['Two services remain under-adopted', 'Renewal planning window begins next month'],
+  },
+  {
+    id: 'apex-systems-group',
+    customer: 'Apex Systems Group',
+    segment: 'Enterprise',
+    region: 'West',
+    revenue: 386000,
+    health: 'Healthy',
+    healthScore: 90,
+    retentionRisk: 'Low',
+    expansionPotential: 62000,
+    lifecycle: 'Growth',
+    renewal: '2026-12-04',
+    owner: 'Jordan Patel',
+    trend: [49, 55, 61, 66, 70, 77],
+    engagement: [68, 72, 75, 79, 82, 84],
+    adoption: [
+      { label: 'Core Platform', value: 91 },
+      { label: 'Analytics', value: 84 },
+      { label: 'Automation', value: 72 },
+      { label: 'AI Insights', value: 69 },
+      { label: 'Premium Support', value: 76 },
+    ],
+    support: { volume: '14 tickets', resolution: '95%', escalation: '2.8%', response: '16 min' },
+    timeline: ['New finance stakeholder added', 'Usage target exceeded', 'Expansion proposal drafted'],
+    opportunities: ['Add executive reporting seats', 'Cross-sell revenue anomaly detection'],
+    risks: ['Procurement review may extend buying cycle'],
+  },
+  {
+    id: 'meridian-health-partners',
+    customer: 'Meridian Health Partners',
+    segment: 'Enterprise',
+    region: 'Northeast',
+    revenue: 342000,
+    health: 'Watch',
+    healthScore: 81,
+    retentionRisk: 'Medium',
+    expansionPotential: 118000,
+    lifecycle: 'Renewal',
+    renewal: '2026-10-22',
+    owner: 'Priya Rao',
+    trend: [52, 54, 57, 56, 58, 61],
+    engagement: [70, 68, 66, 64, 65, 67],
+    adoption: [
+      { label: 'Core Platform', value: 86 },
+      { label: 'Analytics', value: 73 },
+      { label: 'Automation', value: 51 },
+      { label: 'AI Insights', value: 44 },
+      { label: 'Premium Support', value: 88 },
+    ],
+    support: { volume: '31 tickets', resolution: '91%', escalation: '6.4%', response: '24 min' },
+    timeline: ['Support escalation resolved', 'Renewal risk moved to watch', 'Clinical operations report delivered'],
+    opportunities: ['Offer automation adoption workshop', 'Bundle renewal with services expansion'],
+    risks: ['Support volume remains elevated', 'Executive sponsor engagement declined'],
+  },
+  {
+    id: 'brightline-retail',
+    customer: 'Brightline Retail',
+    segment: 'Mid-Market',
+    region: 'Southeast',
+    revenue: 214000,
+    health: 'Watch',
+    healthScore: 78,
+    retentionRisk: 'Medium',
+    expansionPotential: 46000,
+    lifecycle: 'Adoption',
+    renewal: '2027-01-15',
+    owner: 'Elena Brooks',
+    trend: [31, 34, 38, 40, 42, 45],
+    engagement: [64, 63, 62, 60, 59, 58],
+    adoption: [
+      { label: 'Core Platform', value: 79 },
+      { label: 'Analytics', value: 68 },
+      { label: 'Automation', value: 47 },
+      { label: 'AI Insights', value: 36 },
+      { label: 'Premium Support', value: 55 },
+    ],
+    support: { volume: '22 tickets', resolution: '92%', escalation: '4.8%', response: '21 min' },
+    timeline: ['Health score decreased', 'New region onboarded', 'Forecast variance alert accepted'],
+    opportunities: ['Add store performance dashboard', 'Introduce customer retention package'],
+    risks: ['Engagement declined three consecutive periods', 'Automation module under-adopted'],
+  },
+  {
+    id: 'cobalt-manufacturing',
+    customer: 'Cobalt Manufacturing',
+    segment: 'Mid-Market',
+    region: 'Midwest',
+    revenue: 196000,
+    health: 'At Risk',
+    healthScore: 64,
+    retentionRisk: 'High',
+    expansionPotential: 24000,
+    lifecycle: 'Risk',
+    renewal: '2026-09-28',
+    owner: 'Noah Williams',
+    trend: [36, 37, 36, 35, 36, 38],
+    engagement: [63, 59, 55, 50, 47, 44],
+    adoption: [
+      { label: 'Core Platform', value: 72 },
+      { label: 'Analytics', value: 49 },
+      { label: 'Automation', value: 42 },
+      { label: 'AI Insights', value: 31 },
+      { label: 'Premium Support', value: 68 },
+    ],
+    support: { volume: '43 tickets', resolution: '88%', escalation: '8.7%', response: '31 min' },
+    timeline: ['Renewal risk increased', 'Usage declined in two facilities', 'Customer success review requested'],
+    opportunities: ['Package automation services into renewal'],
+    risks: ['Product usage down 26%', 'Three unresolved support escalations', 'Renewal is within 75 days'],
+  },
+  {
+    id: 'vertex-financial',
+    customer: 'Vertex Financial',
+    segment: 'Enterprise',
+    region: 'International',
+    revenue: 368000,
+    health: 'Healthy',
+    healthScore: 89,
+    retentionRisk: 'Low',
+    expansionPotential: 96000,
+    lifecycle: 'Expansion',
+    renewal: '2027-02-08',
+    owner: 'Amara Singh',
+    trend: [45, 50, 54, 60, 64, 70],
+    engagement: [72, 75, 78, 80, 82, 86],
+    adoption: [
+      { label: 'Core Platform', value: 89 },
+      { label: 'Analytics', value: 82 },
+      { label: 'Automation', value: 69 },
+      { label: 'AI Insights', value: 74 },
+      { label: 'Premium Support', value: 79 },
+    ],
+    support: { volume: '16 tickets', resolution: '97%', escalation: '1.8%', response: '12 min' },
+    timeline: ['Account brief generated', 'International rollout approved', 'Expansion meeting booked'],
+    opportunities: ['Expand risk analytics into EMEA leadership team', 'Add margin intelligence package'],
+    risks: ['Data residency review needed for new region'],
+  },
+  {
+    id: 'summit-infrastructure',
+    customer: 'Summit Infrastructure',
+    segment: 'SMB',
+    region: 'West',
+    revenue: 126000,
+    health: 'Watch',
+    healthScore: 76,
+    retentionRisk: 'Medium',
+    expansionPotential: 32000,
+    lifecycle: 'Renewal',
+    renewal: '2026-12-19',
+    owner: 'Miles Turner',
+    trend: [19, 21, 22, 24, 24, 27],
+    engagement: [58, 59, 57, 55, 56, 57],
+    adoption: [
+      { label: 'Core Platform', value: 74 },
+      { label: 'Analytics', value: 62 },
+      { label: 'Automation', value: 39 },
+      { label: 'AI Insights', value: 34 },
+      { label: 'Premium Support', value: 51 },
+    ],
+    support: { volume: '19 tickets', resolution: '90%', escalation: '5.9%', response: '27 min' },
+    timeline: ['Champion changed role', 'Consulting milestone completed', 'Procurement review started'],
+    opportunities: ['Convert advisory work into recurring analytics retainer'],
+    risks: ['Champion transition may delay renewal planning'],
+  },
+  {
+    id: 'evergreen-media',
+    customer: 'Evergreen Media',
+    segment: 'SMB',
+    region: 'Southeast',
+    revenue: 98000,
+    health: 'Healthy',
+    healthScore: 84,
+    retentionRisk: 'Low',
+    expansionPotential: 28000,
+    lifecycle: 'Growth',
+    renewal: '2027-03-03',
+    owner: 'Tessa Grant',
+    trend: [15, 16, 18, 18, 20, 22],
+    engagement: [61, 64, 66, 69, 70, 73],
+    adoption: [
+      { label: 'Core Platform', value: 82 },
+      { label: 'Analytics', value: 70 },
+      { label: 'Automation', value: 44 },
+      { label: 'AI Insights', value: 41 },
+      { label: 'Premium Support', value: 48 },
+    ],
+    support: { volume: '9 tickets', resolution: '95%', escalation: '1.7%', response: '15 min' },
+    timeline: ['Health score improved', 'New marketing dashboard adopted', 'Expansion interest captured'],
+    opportunities: ['Add customer cohort reporting', 'Upgrade to quarterly executive review'],
+    risks: ['Premium Support has low adoption'],
+  },
+  {
+    id: 'bluepeak-energy',
+    customer: 'BluePeak Energy',
+    segment: 'Enterprise',
+    region: 'West',
+    revenue: 276000,
+    health: 'Healthy',
+    healthScore: 87,
+    retentionRisk: 'Low',
+    expansionPotential: 74000,
+    lifecycle: 'Adoption',
+    renewal: '2027-04-14',
+    owner: 'Sofia Nguyen',
+    trend: [34, 38, 41, 43, 47, 51],
+    engagement: [66, 68, 70, 73, 75, 78],
+    adoption: [
+      { label: 'Core Platform', value: 88 },
+      { label: 'Analytics', value: 76 },
+      { label: 'Automation', value: 52 },
+      { label: 'AI Insights', value: 48 },
+      { label: 'Premium Support', value: 64 },
+    ],
+    support: { volume: '13 tickets', resolution: '94%', escalation: '3.2%', response: '17 min' },
+    timeline: ['Adoption milestone reached', 'Operations dashboard activated', 'Executive sponsor added'],
+    opportunities: ['Expand automation to field operations', 'Launch AI Insights pilot'],
+    risks: ['Automation adoption below enterprise peer average'],
+  },
+  {
+    id: 'atlas-commerce',
+    customer: 'Atlas Commerce',
+    segment: 'Mid-Market',
+    region: 'International',
+    revenue: 162000,
+    health: 'At Risk',
+    healthScore: 67,
+    retentionRisk: 'High',
+    expansionPotential: 18000,
+    lifecycle: 'Risk',
+    renewal: '2026-11-07',
+    owner: 'Daniel Kim',
+    trend: [29, 28, 27, 27, 26, 25],
+    engagement: [57, 53, 49, 46, 43, 41],
+    adoption: [
+      { label: 'Core Platform', value: 69 },
+      { label: 'Analytics', value: 46 },
+      { label: 'Automation', value: 34 },
+      { label: 'AI Insights', value: 29 },
+      { label: 'Premium Support', value: 57 },
+    ],
+    support: { volume: '37 tickets', resolution: '86%', escalation: '9.4%', response: '34 min' },
+    timeline: ['Payment issue flagged', 'Engagement dropped below threshold', 'Retention plan requested'],
+    opportunities: ['Stabilize adoption before expansion motion'],
+    risks: ['Payment issues', 'Usage reduction', 'Contract risk'],
+  },
+];
+
+export const customerSorters = {
+  Revenue: (item) => item.revenue,
+  'Health Score': (item) => item.healthScore,
+  'Expansion Potential': (item) => item.expansionPotential,
+  'Retention Risk': (item) => ({ Low: 1, Medium: 2, High: 3 })[item.retentionRisk],
+};
+
+export const churnRisks = [
+  { id: 'cobalt-risk', customer: 'Cobalt Manufacturing', group: 'High Risk', riskScore: 86, revenueAtRisk: 196000, renewalDate: '2026-09-28', signal: 'Usage Reduction', trend: '+12%', action: 'Start executive outreach and renewal planning.', detected: '43 min ago', confidence: '91%', signals: ['product usage down 26%', 'three unresolved support escalations', 'executive sponsor engagement declined', 'renewal is within 75 days'] },
+  { id: 'atlas-risk', customer: 'Atlas Commerce', group: 'High Risk', riskScore: 82, revenueAtRisk: 162000, renewalDate: '2026-11-07', signal: 'Payment Issues', trend: '+9%', action: 'Resolve billing concern and schedule service review.', detected: '1 hr ago', confidence: '88%', signals: ['payment issue remains open', 'usage down 18%', 'contract risk increased', 'support escalation active'] },
+  { id: 'meridian-risk', customer: 'Meridian Health Partners', group: 'Medium Risk', riskScore: 64, revenueAtRisk: 342000, renewalDate: '2026-10-22', signal: 'Support Escalation', trend: '+4%', action: 'Run adoption workshop before renewal committee.', detected: '2 hrs ago', confidence: '84%', signals: ['support volume up 22%', 'AI Insights adoption below 50%', 'renewal within 60 days', 'clinical sponsor engagement softened'] },
+  { id: 'brightline-risk', customer: 'Brightline Retail', group: 'Medium Risk', riskScore: 58, revenueAtRisk: 214000, renewalDate: '2027-01-15', signal: 'Declining Engagement', trend: '+6%', action: 'Re-engage regional owners with value review.', detected: '28 min ago', confidence: '79%', signals: ['engagement declined three periods', 'automation module under-adopted', 'regional adoption uneven'] },
+  { id: 'northstar-risk', customer: 'Northstar Logistics', group: 'Low Risk', riskScore: 21, revenueAtRisk: 428000, renewalDate: '2026-12-18', signal: 'Low Adoption', trend: '-3%', action: 'Address two under-adopted services during expansion review.', detected: '14 min ago', confidence: '76%', signals: ['two services remain under-adopted', 'renewal planning window approaching'] },
+];
+
+export const expansionOpportunities = [
+  { customer: 'Meridian Health Partners', value: 118000, confidence: 86, recommendation: 'Automation adoption package', timing: 'Before renewal', gap: 'AI Insights and Automation under-adopted' },
+  { customer: 'Vertex Financial', value: 96000, confidence: 91, recommendation: 'Risk analytics expansion', timing: 'Next planning cycle', gap: 'International reporting demand' },
+  { customer: 'Northstar Logistics', value: 84000, confidence: 92, recommendation: 'Automation and AI Insights bundle', timing: 'Q4 planning', gap: 'Two services under-adopted' },
+  { customer: 'BluePeak Energy', value: 74000, confidence: 84, recommendation: 'Field operations automation', timing: 'Next 45 days', gap: 'Automation below peer average' },
+  { customer: 'Apex Systems Group', value: 62000, confidence: 89, recommendation: 'Executive reporting seats', timing: 'This quarter', gap: 'Finance leadership expansion' },
+];
+
+export const expansionSorters = {
+  Value: (item) => item.value,
+  Confidence: (item) => item.confidence,
+};
+
+export const lifecycleAnalytics = [
+  { stage: 'Onboarding', accounts: 184, revenue: '$420K', health: 82, days: 21, conversion: 88 },
+  { stage: 'Adoption', accounts: 356, revenue: '$1.08M', health: 84, days: 46, conversion: 81 },
+  { stage: 'Growth', accounts: 514, revenue: '$2.14M', health: 89, days: 74, conversion: 76 },
+  { stage: 'Expansion', accounts: 326, revenue: '$2.01M', health: 91, days: 58, conversion: 69 },
+  { stage: 'Renewal', accounts: 332, revenue: '$2.36M', health: 86, days: 39, conversion: 92 },
+  { stage: 'Risk', accounts: 130, revenue: '$384K', health: 66, days: 32, conversion: 54 },
+];
+
+export const retentionAnalytics = {
+  metrics: [
+    { label: 'Gross Retention', value: '94.8%' },
+    { label: 'Net Revenue Retention', value: '112.4%' },
+    { label: 'Renewals This Quarter', value: '148' },
+    { label: 'Renewal Value', value: '$4.82M' },
+    { label: 'Renewal Risk', value: '$384K' },
+  ],
+  timeline: [
+    { month: 'Oct', value: 1.18, healthy: 72 },
+    { month: 'Nov', value: 1.42, healthy: 68 },
+    { month: 'Dec', value: 2.22, healthy: 76 },
+  ],
+  outcome: [
+    { label: 'Forecast Retained', value: 88 },
+    { label: 'Expansion Expected', value: 17 },
+    { label: 'Potential Loss', value: 8 },
+  ],
+};
+
+export const cohortAnalysis = [
+  { cohort: 'Q2 2025', retention: 93, expansion: 18, health: 86, adoption: 74 },
+  { cohort: 'Q3 2025', retention: 95, expansion: 21, health: 88, adoption: 78 },
+  { cohort: 'Q4 2025', retention: 96, expansion: 24, health: 90, adoption: 81 },
+  { cohort: 'Q1 2026', retention: 94, expansion: 16, health: 84, adoption: 69 },
+  { cohort: 'Q2 2026', retention: 92, expansion: 12, health: 82, adoption: 63 },
+];
+
+export const adoptionIntelligence = [
+  { offering: 'Core Platform', adoption: 86, customers: 1584, opportunity: '$142K', health: 91 },
+  { offering: 'Analytics', adoption: 74, customers: 1363, opportunity: '$218K', health: 88 },
+  { offering: 'Automation', adoption: 58, customers: 1068, opportunity: '$392K', health: 83 },
+  { offering: 'AI Insights', adoption: 49, customers: 903, opportunity: '$446K', health: 81 },
+  { offering: 'Premium Support', adoption: 62, customers: 1142, opportunity: '$184K', health: 87 },
+];
+
+export const customerExperience = {
+  metrics: [
+    { label: 'CSAT', value: '4.6 / 5' },
+    { label: 'Support Resolution', value: '94%' },
+    { label: 'Escalation Rate', value: '3.8%' },
+    { label: 'Avg Response Time', value: '18 min' },
+  ],
+  segments: [
+    { segment: 'Enterprise', csat: 4.7, resolution: 95 },
+    { segment: 'Mid-Market', csat: 4.5, resolution: 93 },
+    { segment: 'SMB', csat: 4.3, resolution: 91 },
+  ],
+};
+
+export const customerActivity = [
+  { title: 'Expansion signal detected', customer: 'Northstar Logistics', time: '14 min ago' },
+  { title: 'Health score decreased', customer: 'Brightline Retail', time: '28 min ago' },
+  { title: 'Renewal risk increased', customer: 'Cobalt Manufacturing', time: '43 min ago' },
+  { title: 'New adoption milestone', customer: 'Meridian Health Partners', time: '1 hr ago' },
+  { title: 'Account brief generated', customer: 'Vertex Financial', time: '2 hrs ago' },
+];
+
+export const customerComparison = [
+  { label: 'Customer Count', current: '1,842', previous: '1,725', variance: '+6.8%' },
+  { label: 'Retention', current: '94.8%', previous: '93.2%', variance: '+1.6 pts' },
+  { label: 'NRR', current: '112.4%', previous: '108.3%', variance: '+4.1 pts' },
+  { label: 'Health', current: '88 / 100', previous: '85 / 100', variance: '+3' },
+  { label: 'Accounts at Risk', current: '24', previous: '32', variance: '-8' },
+  { label: 'Expansion Revenue', current: '$1.14M', previous: '$912K', variance: '+24.9%' },
+];

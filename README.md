@@ -41,6 +41,15 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 - Workload forecasting for near-term demand, peak days, capacity gaps, and automation offsets
 - Operational risk intelligence with selectable risk detail and mock action workflows
 - Efficiency opportunity intelligence with estimated monthly savings, confidence, effort, and next steps
+- Customer Intelligence workspace for health scoring, retention risk, expansion potential, lifecycle behavior, and account-level AI briefs
+- Customer health distribution and health trend analysis across healthy, watch, and at-risk accounts
+- Customer segment performance with retention, NRR, expansion, health score, and churn risk
+- Searchable customer portfolio with lifecycle, region, health, expansion potential, and owner context
+- Customer detail drawer with revenue trend, engagement trend, adoption, support activity, timeline, renewal details, expansion opportunities, and risk signals
+- Account-level AI customer brief with observations, recommended next action, and mock follow-up actions
+- Churn-risk intelligence with selectable risk detail, contributing signals, and retention plan actions
+- Expansion opportunity sorting by value or confidence
+- Customer lifecycle, cohort analysis, retention analytics, adoption intelligence, and experience metrics
 
 ## Tech Stack
 
@@ -55,10 +64,12 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 ```text
 src/
   components/
+    customers/
     overview/
     operations/
     revenue/
   data/
+    customersData.js
     overviewData.js
     operationsData.js
     revenueData.js
@@ -68,6 +79,7 @@ src/
     Overview.jsx
     Operations.jsx
     Revenue.jsx
+    Customers.jsx
   styles/
     global.css
   App.jsx
@@ -79,6 +91,8 @@ The dashboard uses a dedicated mock data module and reusable overview components
 Revenue Analytics extends the initial executive overview with its own page-level data model and focused components for trend analysis, revenue composition, segment performance, regional performance, customer drilldowns, margin analysis, forecast variance, and opportunity intelligence.
 
 Operations Analytics adds a distinct operational workspace with client-side data for efficiency trends, process performance, SLA monitoring, automation coverage, team capacity, workload forecasting, risk intelligence, bottleneck analysis, and efficiency opportunities.
+
+Customer Intelligence adds a relationship-focused workspace with client-side data for portfolio health, churn risk, expansion opportunities, lifecycle movement, retention and renewal analytics, cohort performance, product adoption, customer experience, and account-level AI briefs.
 
 ## Accessibility
 
@@ -94,6 +108,9 @@ Operations Analytics adds a distinct operational workspace with client-side data
 - Keyboard-accessible process drawer with Escape-to-close behavior
 - Labeled operations filters and sortable operational tables
 - Selectable risk cards with text-based severity and detailed recommendations
+- Keyboard-accessible customer intelligence drawer with Escape-to-close behavior
+- Labeled customer filters, search controls, and sortable portfolio tables
+- Churn-risk cards use text labels in addition to severity color
 
 ## Responsive Design
 
@@ -102,6 +119,8 @@ The layout supports desktop, laptop, tablet, and mobile breakpoints. KPI cards c
 Revenue tables are contained in responsive scroll regions, filter controls collapse into compact mobile stacks, and the customer detail drawer becomes full-width on small screens.
 
 Operations tables use the same responsive scroll pattern, operational filters collapse into mobile-friendly controls, and process drilldowns use a full-width drawer on small screens.
+
+Customer portfolio and cohort tables use responsive scroll regions, customer filters wrap cleanly, and the account detail drawer becomes full-width on mobile.
 
 ## Local Development
 
@@ -130,7 +149,8 @@ This project is designed to support a Dribbble UI/UX case study focused on a pre
 - Add Revenue workspace screenshot set
 - Add Operations workspace screenshot set
 - Deepen Operations drilldowns with workflow simulation states
-- Add Customers cohort and risk views
+- Add Customer Intelligence screenshot set
+- Deepen customer health and retention workflow states
 - Expand Forecasting scenarios
 - Create AI Insights workspace with prompt history
 - Add report export mock flow
