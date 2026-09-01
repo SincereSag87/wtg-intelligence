@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import DashboardLayout from './layouts/DashboardLayout.jsx';
 import Customers from './pages/Customers.jsx';
+import Forecasting from './pages/Forecasting.jsx';
 import Overview from './pages/Overview.jsx';
 import Operations from './pages/Operations.jsx';
 import Revenue from './pages/Revenue.jsx';
@@ -10,6 +11,7 @@ function App() {
 
   return (
     <DashboardLayout activePage={activePage} onNavigate={setActivePage}>
+      {activePage === 'forecasting' && <Forecasting onNavigate={setActivePage} />}
       {activePage === 'customers' && <Customers onNavigate={setActivePage} />}
       {activePage === 'operations' && <Operations onNavigate={setActivePage} />}
       {activePage === 'revenue' && <Revenue />}

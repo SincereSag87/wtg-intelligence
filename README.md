@@ -50,6 +50,14 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 - Churn-risk intelligence with selectable risk detail, contributing signals, and retention plan actions
 - Expansion opportunity sorting by value or confidence
 - Customer lifecycle, cohort analysis, retention analytics, adoption intelligence, and experience metrics
+- Forecasting workspace for projected performance, confidence ranges, target pacing, scenarios, assumptions, and AI explanations
+- Revenue forecasting with historical actuals, projected lines, targets, and confidence bands
+- Target pacing with revenue to date, expected remaining revenue, required run rate, and projected run rate
+- Forecast variance drivers with selectable detail, supporting signals, and cross-page actions
+- Scenario planning across base, upside, downside, and locally created scenarios
+- Editable forecast assumptions with reset and apply interactions
+- Forecast risks, upside opportunities, customer outlook, operational outlook, and model accuracy reporting
+- AI forecast explanation panel with variance, follow-up, and executive brief actions
 
 ## Tech Stack
 
@@ -65,21 +73,24 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 src/
   components/
     customers/
+    forecasting/
     overview/
     operations/
     revenue/
   data/
     customersData.js
+    forecastingData.js
     overviewData.js
     operationsData.js
     revenueData.js
   layouts/
     DashboardLayout.jsx
   pages/
+    Customers.jsx
+    Forecasting.jsx
     Overview.jsx
     Operations.jsx
     Revenue.jsx
-    Customers.jsx
   styles/
     global.css
   App.jsx
@@ -93,6 +104,8 @@ Revenue Analytics extends the initial executive overview with its own page-level
 Operations Analytics adds a distinct operational workspace with client-side data for efficiency trends, process performance, SLA monitoring, automation coverage, team capacity, workload forecasting, risk intelligence, bottleneck analysis, and efficiency opportunities.
 
 Customer Intelligence adds a relationship-focused workspace with client-side data for portfolio health, churn risk, expansion opportunities, lifecycle movement, retention and renewal analytics, cohort performance, product adoption, customer experience, and account-level AI briefs.
+
+Forecasting adds a strategic planning workspace with client-side scenario modeling, editable assumptions, target pacing, forecast confidence, variance drivers, business-unit forecasts, customer and operational outlooks, risk/opportunity analysis, forecast change history, and fictional model performance metrics.
 
 ## Accessibility
 
@@ -111,6 +124,9 @@ Customer Intelligence adds a relationship-focused workspace with client-side dat
 - Keyboard-accessible customer intelligence drawer with Escape-to-close behavior
 - Labeled customer filters, search controls, and sortable portfolio tables
 - Churn-risk cards use text labels in addition to severity color
+- Keyboard-accessible scenario creation dialog with Escape-to-close behavior
+- Labeled assumption inputs, scenario controls, forecast filters, and chart interaction zones
+- Scenario and driver selections expose text labels in addition to visual state
 
 ## Responsive Design
 
@@ -121,6 +137,8 @@ Revenue tables are contained in responsive scroll regions, filter controls colla
 Operations tables use the same responsive scroll pattern, operational filters collapse into mobile-friendly controls, and process drilldowns use a full-width drawer on small screens.
 
 Customer portfolio and cohort tables use responsive scroll regions, customer filters wrap cleanly, and the account detail drawer becomes full-width on mobile.
+
+Forecast scenario cards, assumption controls, and comparison panels collapse from dense desktop grids into mobile single-column layouts. Forecast tables remain in responsive scroll regions.
 
 ## Local Development
 
@@ -151,7 +169,8 @@ This project is designed to support a Dribbble UI/UX case study focused on a pre
 - Deepen Operations drilldowns with workflow simulation states
 - Add Customer Intelligence screenshot set
 - Deepen customer health and retention workflow states
-- Expand Forecasting scenarios
+- Add Forecasting workspace screenshot set
+- Deepen forecasting scenarios with saved views and richer assumption sensitivity
 - Create AI Insights workspace with prompt history
 - Add report export mock flow
 - Capture production-quality screenshots

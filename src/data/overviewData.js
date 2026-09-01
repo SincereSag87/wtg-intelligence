@@ -20,7 +20,7 @@ export const navigationItems = [
   { label: 'Revenue', icon: CircleDollarSign, page: 'revenue' },
   { label: 'Operations', icon: Gauge, page: 'operations' },
   { label: 'Customers', icon: UsersRound, page: 'customers' },
-  { label: 'Forecasting', icon: LineChart, future: true },
+  { label: 'Forecasting', icon: LineChart, page: 'forecasting' },
   { label: 'AI Insights', icon: Brain, future: true },
   { label: 'Reports', icon: FileBarChart, future: true },
   { label: 'Settings', icon: Settings, future: true },
