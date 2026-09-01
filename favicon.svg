@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="WTG Intelligence">
+  <rect width="64" height="64" rx="14" fill="#10202f"/>
+  <path d="M16 19h8l4 20 5-20h7l5 20 4-20h7l-7 28h-8l-5-18-5 18h-8L16 19Z" fill="#f8f5ef"/>
+  <circle cx="49" cy="18" r="4" fill="#2f7d6f"/>
+</svg>
