@@ -24,6 +24,14 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 - Recent executive activity feed
 - Quick report list with interactive mock actions
 - Responsive sidebar and mobile navigation
+- Revenue Analytics workspace with growth, margin, forecast, and customer revenue analysis
+- Revenue trend analysis with actual, forecast, and prior-period comparison
+- Forecast comparison with target, actual, projected revenue, variance, and confidence band
+- Segment performance sorting across revenue, growth, margin, and retention
+- Regional performance comparisons with forecast attainment and customer counts
+- Customer revenue drilldowns with account detail drawer, service mix, trends, and renewal context
+- Margin analysis by business unit, segment, trend, and cost contribution
+- Opportunity intelligence for expansion, renewal acceleration, cross-sell, and at-risk revenue
 
 ## Tech Stack
 
@@ -39,12 +47,15 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 src/
   components/
     overview/
+    revenue/
   data/
     overviewData.js
+    revenueData.js
   layouts/
     DashboardLayout.jsx
   pages/
     Overview.jsx
+    Revenue.jsx
   styles/
     global.css
   App.jsx
@@ -52,6 +63,8 @@ src/
 ```
 
 The dashboard uses a dedicated mock data module and reusable overview components so future pages can be added without turning the app into a single large screen component.
+
+Revenue Analytics extends the initial executive overview with its own page-level data model and focused components for trend analysis, revenue composition, segment performance, regional performance, customer drilldowns, margin analysis, forecast variance, and opportunity intelligence.
 
 ## Accessibility
 
@@ -62,10 +75,14 @@ The dashboard uses a dedicated mock data module and reusable overview components
 - Accessible chart summary and point labels
 - `aria-live` feedback for mock dashboard actions
 - Text status labels beyond color-only indicators
+- Keyboard-accessible customer drawer with Escape-to-close behavior
+- Labeled revenue filters, search controls, and sortable table controls
 
 ## Responsive Design
 
 The layout supports desktop, laptop, tablet, and mobile breakpoints. KPI cards collapse from six columns to three columns and then one column. Dashboard panels move from executive grid layouts into single-column mobile sections, and the chart remains readable on small screens.
+
+Revenue tables are contained in responsive scroll regions, filter controls collapse into compact mobile stacks, and the customer detail drawer becomes full-width on small screens.
 
 ## Local Development
 
@@ -90,7 +107,8 @@ This project is designed to support a Dribbble UI/UX case study focused on a pre
 
 ## Roadmap
 
-- Build full Revenue workspace
+- Deepen Revenue workspace with saved views and export flows
+- Add Revenue workspace screenshot set
 - Add Operations drilldowns
 - Add Customers cohort and risk views
 - Expand Forecasting scenarios

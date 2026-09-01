@@ -16,8 +16,8 @@ import {
 } from 'lucide-react';
 
 export const navigationItems = [
-  { label: 'Overview', icon: BarChart3, active: true },
-  { label: 'Revenue', icon: CircleDollarSign, future: true },
+  { label: 'Overview', icon: BarChart3, page: 'overview' },
+  { label: 'Revenue', icon: CircleDollarSign, page: 'revenue' },
   { label: 'Operations', icon: Gauge, future: true },
   { label: 'Customers', icon: UsersRound, future: true },
   { label: 'Forecasting', icon: LineChart, future: true },

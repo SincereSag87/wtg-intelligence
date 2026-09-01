@@ -11,12 +11,12 @@ function BrandMark() {
   );
 }
 
-function DashboardLayout({ children }) {
+function DashboardLayout({ activePage, onNavigate, children }) {
   const [navOpen, setNavOpen] = useState(false);
   const [feedback, setFeedback] = useState('');
 
   const handleFutureNav = (label) => {
-    setFeedback(`${label} workspace is planned for Phase 2.`);
+    setFeedback(`${label} workspace is planned for a future phase.`);
     setNavOpen(false);
   };
 
@@ -32,19 +32,29 @@ function DashboardLayout({ children }) {
         </div>
 
         <nav className="sidebar__nav">
-          {navigationItems.map(({ label, icon: Icon, active, future }) => (
+          {navigationItems.map(({ label, icon: Icon, page, future }) => {
+            const active = page === activePage;
+            return (
             <button
               className={`nav-item ${active ? 'is-active' : ''}`}
               type="button"
               key={label}
               aria-current={active ? 'page' : undefined}
-              onClick={() => (future ? handleFutureNav(label) : setNavOpen(false))}
+              onClick={() => {
+                if (future) {
+                  handleFutureNav(label);
+                  return;
+                }
+                onNavigate(page);
+                setNavOpen(false);
+              }}
             >
               {createElement(Icon, { size: 18, 'aria-hidden': 'true' })}
               <span>{label}</span>
               {future && <small>Next</small>}
             </button>
-          ))}
+            );
+          })}
         </nav>
 
         <div className="sidebar__panel">
