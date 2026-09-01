@@ -183,7 +183,18 @@ Screenshots are intentionally not fabricated. Add verified captures to `docs/scr
 
 ## CodePen
 
-The dashboard is structured for a later CodePen-compatible interactive UI demo. A future CodePen version can consolidate the React components, mock data, and CSS into a portable prototype.
+Live CodePen Demo: Coming soon
+
+The repository includes a standalone CodePen-friendly export:
+
+```text
+codepen/
+  index.html
+  styles.css
+  app.js
+```
+
+The CodePen demo is independent from the production React/Vite app. It uses CDN React imports, inline mock data, no JSX, and no local application imports.
 
 ## Dribbble
 
