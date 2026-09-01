@@ -21,9 +21,9 @@ export const navigationItems = [
   { label: 'Operations', icon: Gauge, page: 'operations' },
   { label: 'Customers', icon: UsersRound, page: 'customers' },
   { label: 'Forecasting', icon: LineChart, page: 'forecasting' },
-  { label: 'AI Insights', icon: Brain, future: true },
-  { label: 'Reports', icon: FileBarChart, future: true },
-  { label: 'Settings', icon: Settings, future: true },
+  { label: 'AI Insights', icon: Brain, page: 'ai-insights' },
+  { label: 'Reports', icon: FileBarChart, page: 'reports' },
+  { label: 'Settings', icon: Settings, page: 'settings' },
 ];
 
 export const dateRanges = ['Last 30 Days', 'Quarter to Date', 'Year to Date', 'Trailing 12 Months'];

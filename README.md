@@ -58,6 +58,21 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 - Editable forecast assumptions with reset and apply interactions
 - Forecast risks, upside opportunities, customer outlook, operational outlook, and model accuracy reporting
 - AI forecast explanation panel with variance, follow-up, and executive brief actions
+- AI Insights workspace with prioritized insight feed, explainability panel, recommendations, saved prompts, executive brief, and decision log
+- Reports workspace with report library, preview panel, templates, create flow, schedule flow, export actions, and activity
+- Settings workspace with editable demo preferences, team roles, notifications, analytics defaults, AI defaults, security, masked demo keys, and billing usage
+- Global command menu with Ctrl+K / Cmd+K, workspace navigation, searchable reports, insights, saved questions, and create actions
+
+## Product Areas
+
+- Overview
+- Revenue
+- Operations
+- Customers
+- Forecasting
+- AI Insights
+- Reports
+- Settings
 
 ## Tech Stack
 
@@ -74,8 +89,10 @@ src/
   components/
     customers/
     forecasting/
+    insights/
     overview/
     operations/
+    platform/
     revenue/
   data/
     customersData.js
@@ -83,14 +100,18 @@ src/
     overviewData.js
     operationsData.js
     revenueData.js
+    workspaceData.js
   layouts/
     DashboardLayout.jsx
   pages/
     Customers.jsx
     Forecasting.jsx
+    AIInsights.jsx
     Overview.jsx
     Operations.jsx
+    Reports.jsx
     Revenue.jsx
+    Settings.jsx
   styles/
     global.css
   App.jsx
@@ -106,6 +127,8 @@ Operations Analytics adds a distinct operational workspace with client-side data
 Customer Intelligence adds a relationship-focused workspace with client-side data for portfolio health, churn risk, expansion opportunities, lifecycle movement, retention and renewal analytics, cohort performance, product adoption, customer experience, and account-level AI briefs.
 
 Forecasting adds a strategic planning workspace with client-side scenario modeling, editable assumptions, target pacing, forecast confidence, variance drivers, business-unit forecasts, customer and operational outlooks, risk/opportunity analysis, forecast change history, and fictional model performance metrics.
+
+AI Insights, Reports, and Settings complete the product shell with cross-workspace recommendations, a local executive brief flow, report management, configurable demo settings, and a keyboard-accessible command menu.
 
 ## Accessibility
 
@@ -127,6 +150,9 @@ Forecasting adds a strategic planning workspace with client-side scenario modeli
 - Keyboard-accessible scenario creation dialog with Escape-to-close behavior
 - Labeled assumption inputs, scenario controls, forecast filters, and chart interaction zones
 - Scenario and driver selections expose text labels in addition to visual state
+- Keyboard-accessible command menu with Escape close, arrow-key selection, and Enter activation
+- Labeled report, schedule, settings, notification, and AI prompt controls
+- Reduced-motion support via `prefers-reduced-motion`
 
 ## Responsive Design
 
@@ -139,6 +165,8 @@ Operations tables use the same responsive scroll pattern, operational filters co
 Customer portfolio and cohort tables use responsive scroll regions, customer filters wrap cleanly, and the account detail drawer becomes full-width on mobile.
 
 Forecast scenario cards, assumption controls, and comparison panels collapse from dense desktop grids into mobile single-column layouts. Forecast tables remain in responsive scroll regions.
+
+AI Insights, Reports, Settings, and the command menu reuse the same responsive grid, scroll, drawer, modal, and control patterns so all product areas remain usable on desktop, tablet, and mobile.
 
 ## Local Development
 
@@ -171,6 +199,10 @@ This project is designed to support a Dribbble UI/UX case study focused on a pre
 - Deepen customer health and retention workflow states
 - Add Forecasting workspace screenshot set
 - Deepen forecasting scenarios with saved views and richer assumption sensitivity
-- Create AI Insights workspace with prompt history
-- Add report export mock flow
+- Add AI Insights, Reports, and Settings screenshot set
+- Package a CodePen-compatible single-screen demo
 - Capture production-quality screenshots
+
+## Portfolio Disclaimer
+
+WTG Intelligence is a fictional enterprise analytics portfolio/demo product built with mock data. It does not represent a real company, production service, customer dataset, machine learning model, AI system, billing system, or security implementation.

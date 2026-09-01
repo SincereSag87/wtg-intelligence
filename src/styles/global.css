@@ -2541,6 +2541,310 @@ rect[tabindex]:focus-visible {
   font-weight: 900;
 }
 
+.command-trigger {
+  width: 100%;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.command-trigger span {
+  flex: 1;
+  color: #9da4ad;
+}
+
+kbd {
+  min-width: 48px;
+  padding: 3px 7px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface-muted);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.command-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  padding-top: 10vh;
+}
+
+.command-menu {
+  position: relative;
+  z-index: 1;
+  width: min(680px, calc(100vw - 32px));
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.command-search {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) 34px;
+  gap: 10px;
+  align-items: center;
+  padding: 13px;
+  border-bottom: 1px solid var(--line);
+}
+
+.command-search input,
+.ask-box textarea,
+.ask-box input,
+.settings-page select {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--text);
+}
+
+.command-search input {
+  min-height: 32px;
+  border: 0;
+  outline: 0;
+}
+
+.command-search button {
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+}
+
+.command-results,
+.insight-feed,
+.saved-question-list,
+.report-card-grid,
+.settings-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.command-results {
+  padding: 8px;
+}
+
+.command-item,
+.saved-question-list button {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 42px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  padding: 10px 12px;
+}
+
+.command-item.is-selected,
+.command-item:hover,
+.saved-question-list button:hover,
+.settings-tabs button:hover,
+.settings-tabs button.is-selected {
+  border-color: rgba(47, 125, 111, 0.34);
+  background: var(--accent-soft);
+}
+
+.command-item small,
+.insight-row small,
+.insight-row p,
+.insight-row em,
+.settings-card label,
+.reports-page p,
+.settings-page p {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.insight-row {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) auto auto;
+  gap: 12px;
+  align-items: start;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  color: var(--text);
+  text-align: left;
+}
+
+.insight-row:hover,
+.insight-row.is-selected,
+.report-card.is-selected {
+  border-color: rgba(95, 111, 149, 0.42);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.insight-row > span {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #edf0f7;
+  color: #5f6f95;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.insight-row strong,
+.report-card strong,
+.settings-card h3 {
+  display: block;
+  color: var(--navy);
+}
+
+.insight-row p {
+  margin: 5px 0 0;
+  line-height: 1.45;
+}
+
+.insight-row b {
+  color: var(--accent-strong);
+}
+
+.insight-row em {
+  min-height: 26px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--surface);
+  font-style: normal;
+  font-weight: 900;
+}
+
+.explain-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.explain-grid div,
+.settings-card {
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.explain-grid span,
+.ask-box span {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.explain-grid strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--navy);
+}
+
+.ask-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.ask-box textarea {
+  min-height: 96px;
+  padding: 12px;
+  resize: vertical;
+}
+
+.report-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.report-card > button {
+  width: 100%;
+  display: grid;
+  gap: 5px;
+  padding: 14px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+}
+
+.report-card span,
+.report-card small {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  padding: 0 12px 12px;
+}
+
+.report-actions button,
+.settings-tabs button {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.settings-tabs button {
+  padding: 0 12px;
+}
+
+.settings-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.settings-card {
+  display: grid;
+  gap: 8px;
+}
+
+.settings-card label {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.settings-page .data-table select {
+  min-height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
 @media (max-width: 1260px) {
   .metric-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2570,7 +2874,9 @@ rect[tabindex]:focus-visible {
   .retention-grid,
   .support-metrics,
   .scenario-grid,
-  .assumption-grid {
+  .assumption-grid,
+  .explain-grid,
+  .settings-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2682,6 +2988,11 @@ rect[tabindex]:focus-visible {
     grid-template-columns: 1fr;
   }
 
+  .explain-grid,
+  .settings-grid {
+    grid-template-columns: 1fr;
+  }
+
   .metric-card {
     min-height: 150px;
   }
@@ -2756,12 +3067,16 @@ rect[tabindex]:focus-visible {
 
   .forecast-mode-chip,
   .scenario-grid,
-  .assumption-grid {
+  .assumption-grid,
+  .explain-grid,
+  .settings-grid {
     width: 100%;
   }
 
   .scenario-grid,
-  .assumption-grid {
+  .assumption-grid,
+  .explain-grid,
+  .settings-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2771,6 +3086,15 @@ rect[tabindex]:focus-visible {
 
   .health-donut {
     margin: 0 auto;
+  }
+
+  .insight-row {
+    grid-template-columns: 1fr;
+  }
+
+  .report-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
 
   .customer-drawer {

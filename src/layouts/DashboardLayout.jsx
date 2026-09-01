@@ -1,5 +1,7 @@
 import { createElement, useState } from 'react';
 import { Bell, ChevronDown, Menu, Search, X } from 'lucide-react';
+import { useEffect } from 'react';
+import CommandMenu from '../components/platform/CommandMenu.jsx';
 import { navigationItems } from '../data/overviewData.js';
 
 function BrandMark() {
@@ -14,11 +16,23 @@ function BrandMark() {
 function DashboardLayout({ activePage, onNavigate, children }) {
   const [navOpen, setNavOpen] = useState(false);
   const [feedback, setFeedback] = useState('');
+  const [commandOpen, setCommandOpen] = useState(false);
 
   const handleFutureNav = (label) => {
     setFeedback(`${label} workspace is planned for a future phase.`);
     setNavOpen(false);
   };
+
+  useEffect(() => {
+    const handleKey = (event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        setCommandOpen(true);
+      }
+    };
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, []);
 
   return (
     <div className="app-shell">
@@ -58,8 +72,8 @@ function DashboardLayout({ activePage, onNavigate, children }) {
         </nav>
 
         <div className="sidebar__panel">
-          <span>Workspace Health</span>
-          <strong>98.2%</strong>
+          <span>WTG Intelligence</span>
+          <strong>Scale Plan</strong>
           <p>Data pipelines, forecasts, and AI briefings are operating normally.</p>
         </div>
       </aside>
@@ -73,11 +87,11 @@ function DashboardLayout({ activePage, onNavigate, children }) {
           <button className="icon-button mobile-menu" type="button" aria-label="Open navigation" onClick={() => setNavOpen(true)}>
             <Menu size={20} />
           </button>
-          <label className="search-field">
+          <button className="search-field command-trigger" type="button" onClick={() => setCommandOpen(true)} aria-label="Open command menu">
             <Search size={17} aria-hidden="true" />
-            <span className="sr-only">Search intelligence workspace</span>
-            <input type="search" placeholder="Search metrics, reports, customers..." />
-          </label>
+            <span>Search intelligence...</span>
+            <kbd>Ctrl K</kbd>
+          </button>
           <div className="topbar__actions">
             <button className="icon-button" type="button" aria-label="Notifications">
               <Bell size={18} />
@@ -91,6 +105,7 @@ function DashboardLayout({ activePage, onNavigate, children }) {
         </header>
 
         <main className="main-content">{children}</main>
+        <CommandMenu open={commandOpen} onClose={() => setCommandOpen(false)} onNavigate={onNavigate} onFeedback={setFeedback} />
         <div className="toast-region" aria-live="polite" aria-atomic="true">
           {feedback && (
             <div className="toast">
