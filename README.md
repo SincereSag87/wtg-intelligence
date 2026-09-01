@@ -32,6 +32,15 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 - Customer revenue drilldowns with account detail drawer, service mix, trends, and renewal context
 - Margin analysis by business unit, segment, trend, and cost contribution
 - Opportunity intelligence for expansion, renewal acceleration, cross-sell, and at-risk revenue
+- Operations Analytics workspace for efficiency, capacity, service levels, automation, risk, and improvement planning
+- Operational efficiency trend analysis with SLA and automation coverage overlays
+- Process performance table with sorting, process drilldowns, bottlenecks, and recommended improvements
+- SLA monitoring by operational area with breach counts and trend context
+- Automation coverage analysis by process with manual and human-review step breakdowns
+- Capacity planning across operations teams with utilization, backlog, projected demand, and staffing risk
+- Workload forecasting for near-term demand, peak days, capacity gaps, and automation offsets
+- Operational risk intelligence with selectable risk detail and mock action workflows
+- Efficiency opportunity intelligence with estimated monthly savings, confidence, effort, and next steps
 
 ## Tech Stack
 
@@ -47,14 +56,17 @@ The product imagines a decision-intelligence workspace where leadership teams ca
 src/
   components/
     overview/
+    operations/
     revenue/
   data/
     overviewData.js
+    operationsData.js
     revenueData.js
   layouts/
     DashboardLayout.jsx
   pages/
     Overview.jsx
+    Operations.jsx
     Revenue.jsx
   styles/
     global.css
@@ -65,6 +77,8 @@ src/
 The dashboard uses a dedicated mock data module and reusable overview components so future pages can be added without turning the app into a single large screen component.
 
 Revenue Analytics extends the initial executive overview with its own page-level data model and focused components for trend analysis, revenue composition, segment performance, regional performance, customer drilldowns, margin analysis, forecast variance, and opportunity intelligence.
+
+Operations Analytics adds a distinct operational workspace with client-side data for efficiency trends, process performance, SLA monitoring, automation coverage, team capacity, workload forecasting, risk intelligence, bottleneck analysis, and efficiency opportunities.
 
 ## Accessibility
 
@@ -77,12 +91,17 @@ Revenue Analytics extends the initial executive overview with its own page-level
 - Text status labels beyond color-only indicators
 - Keyboard-accessible customer drawer with Escape-to-close behavior
 - Labeled revenue filters, search controls, and sortable table controls
+- Keyboard-accessible process drawer with Escape-to-close behavior
+- Labeled operations filters and sortable operational tables
+- Selectable risk cards with text-based severity and detailed recommendations
 
 ## Responsive Design
 
 The layout supports desktop, laptop, tablet, and mobile breakpoints. KPI cards collapse from six columns to three columns and then one column. Dashboard panels move from executive grid layouts into single-column mobile sections, and the chart remains readable on small screens.
 
 Revenue tables are contained in responsive scroll regions, filter controls collapse into compact mobile stacks, and the customer detail drawer becomes full-width on small screens.
+
+Operations tables use the same responsive scroll pattern, operational filters collapse into mobile-friendly controls, and process drilldowns use a full-width drawer on small screens.
 
 ## Local Development
 
@@ -109,7 +128,8 @@ This project is designed to support a Dribbble UI/UX case study focused on a pre
 
 - Deepen Revenue workspace with saved views and export flows
 - Add Revenue workspace screenshot set
-- Add Operations drilldowns
+- Add Operations workspace screenshot set
+- Deepen Operations drilldowns with workflow simulation states
 - Add Customers cohort and risk views
 - Expand Forecasting scenarios
 - Create AI Insights workspace with prompt history

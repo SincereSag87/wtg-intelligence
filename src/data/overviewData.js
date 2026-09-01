@@ -18,7 +18,7 @@ import {
 export const navigationItems = [
   { label: 'Overview', icon: BarChart3, page: 'overview' },
   { label: 'Revenue', icon: CircleDollarSign, page: 'revenue' },
-  { label: 'Operations', icon: Gauge, future: true },
+  { label: 'Operations', icon: Gauge, page: 'operations' },
   { label: 'Customers', icon: UsersRound, future: true },
   { label: 'Forecasting', icon: LineChart, future: true },
   { label: 'AI Insights', icon: Brain, future: true },

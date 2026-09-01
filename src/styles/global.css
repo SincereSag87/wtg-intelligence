@@ -1619,6 +1619,330 @@ rect[tabindex]:focus-visible {
   padding-top: 8px;
 }
 
+.operations-page {
+  --ops: #536f3f;
+  --ops-strong: #3f562f;
+  --ops-soft: #eef4e7;
+}
+
+.operations-hero {
+  align-items: start;
+}
+
+.operations-controls {
+  max-width: 1040px;
+}
+
+.legend-dot--operations,
+.legend-dot--automation {
+  background: var(--ops);
+}
+
+.legend-dot--automation {
+  background: var(--amber);
+}
+
+.chart-line--operations {
+  stroke: var(--ops);
+}
+
+.chart-line--automation {
+  stroke: var(--amber);
+  stroke-dasharray: 4 8;
+}
+
+.chart-point--operations {
+  fill: var(--ops);
+}
+
+.chart-point--automation {
+  fill: var(--amber);
+}
+
+.operations-trend-panel {
+  background:
+    linear-gradient(180deg, rgba(238, 244, 231, 0.72), rgba(255, 255, 255, 0) 48%),
+    #ffffff;
+}
+
+.operations-analysis-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.sla-summary,
+.workload-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.workload-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.sla-summary div,
+.workload-grid div {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.sla-summary span,
+.workload-grid span,
+.automation-row span,
+.automation-row small,
+.capacity-row span,
+.capacity-row small,
+.bottleneck-row span,
+.bottleneck-row small,
+.risk-impact span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.sla-summary strong,
+.workload-grid strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--navy);
+}
+
+.sla-trend {
+  height: 82px;
+  margin-bottom: 16px;
+}
+
+.automation-list,
+.capacity-list,
+.risk-list,
+.bottleneck-list {
+  display: grid;
+  gap: 12px;
+}
+
+.automation-row,
+.capacity-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+.automation-row:last-child,
+.capacity-row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.automation-row h3,
+.capacity-row h3,
+.bottleneck-row h3,
+.risk-detail-grid h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 13px;
+}
+
+.automation-row strong {
+  color: var(--ops-strong);
+}
+
+.automation-stack {
+  grid-column: 1 / -1;
+  display: flex;
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #eeeae2;
+}
+
+.automation-stack span {
+  height: 100%;
+}
+
+.automation-stack__automated {
+  background: var(--ops);
+}
+
+.automation-stack__manual {
+  background: var(--amber);
+}
+
+.automation-stack__review {
+  background: var(--blue);
+}
+
+.capacity-row strong {
+  font-size: 12px;
+}
+
+.risk-text--high,
+.risk-status--high {
+  color: var(--rose);
+  background: #f7e9e9;
+}
+
+.risk-text--medium,
+.risk-status--medium {
+  color: var(--amber);
+  background: #f5ebdc;
+}
+
+.risk-text--low,
+.risk-status--low {
+  color: var(--accent-strong);
+  background: var(--accent-soft);
+}
+
+.capacity-bars {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 6px;
+}
+
+.progress-track--projected span {
+  background: var(--blue);
+}
+
+.operations-forecast-band .forecast-band__range {
+  left: 18%;
+  right: 12%;
+  background: rgba(83, 111, 63, 0.2);
+}
+
+.operations-forecast-band .forecast-band__target {
+  left: 52%;
+}
+
+.operations-forecast-band .forecast-band__actual {
+  left: 44%;
+}
+
+.operations-forecast-band .forecast-band__projected {
+  left: 62%;
+  background: var(--ops);
+}
+
+.risk-card {
+  width: 100%;
+  min-height: 76px;
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  color: var(--text);
+  text-align: left;
+}
+
+.risk-card:hover,
+.risk-card.is-selected {
+  border-color: rgba(83, 111, 63, 0.38);
+  background: #ffffff;
+  box-shadow: var(--shadow-soft);
+}
+
+.risk-card strong {
+  display: block;
+  color: var(--navy);
+}
+
+.risk-card span,
+.risk-card small,
+.risk-card time {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.risk-card time {
+  grid-column: 2 / -1;
+}
+
+.severity-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.severity-dot--high {
+  background: var(--rose);
+}
+
+.severity-dot--medium {
+  background: var(--amber);
+}
+
+.severity-dot--low {
+  background: var(--accent);
+}
+
+.risk-detail-panel {
+  border-color: rgba(83, 111, 63, 0.25);
+}
+
+.risk-metrics {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.risk-impact {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+  margin-bottom: 16px;
+}
+
+.risk-impact p {
+  margin: 6px 0 0;
+  color: #354354;
+  line-height: 1.55;
+}
+
+.risk-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.bottleneck-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px 12px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface-muted);
+}
+
+.bottleneck-row strong {
+  color: var(--navy);
+}
+
+.bottleneck-row small {
+  grid-column: 1 / -1;
+}
+
+.operations-opportunity-grid .opportunity-card__top span {
+  background: var(--ops-soft);
+  color: var(--ops-strong);
+}
+
+.operations-mini-bars span,
+.operations-page .mini-bars span {
+  background: linear-gradient(180deg, var(--ops), var(--ops-strong));
+}
+
+.operations-page .activity-icon {
+  color: var(--ops-strong);
+}
+
 @media (max-width: 1260px) {
   .metric-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1626,24 +1950,29 @@ rect[tabindex]:focus-visible {
 
   .dashboard-grid--primary,
   .dashboard-grid--secondary,
-  .revenue-analysis-grid {
+  .revenue-analysis-grid,
+  .operations-analysis-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .performance-panel,
   .revenue-table-panel,
   .growth-panel,
-  .comparison-panel {
+  .comparison-panel,
+  .process-table-panel {
     grid-column: 1 / -1;
   }
 
   .opportunity-grid,
-  .comparison-grid {
+  .comparison-grid,
+  .operations-comparison-grid,
+  .risk-metrics {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .driver-grid,
-  .margin-columns {
+  .margin-columns,
+  .workload-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -1692,7 +2021,8 @@ rect[tabindex]:focus-visible {
   }
 
   .hero-controls,
-  .revenue-controls {
+  .revenue-controls,
+  .operations-controls {
     justify-content: flex-start;
   }
 
@@ -1724,12 +2054,18 @@ rect[tabindex]:focus-visible {
   .dashboard-grid--primary,
   .dashboard-grid--secondary,
   .revenue-analysis-grid,
+  .operations-analysis-grid,
   .forecast-grid,
   .customer-metrics,
   .opportunity-grid,
   .comparison-grid,
+  .operations-comparison-grid,
   .drawer-metrics,
-  .margin-highlights {
+  .margin-highlights,
+  .risk-metrics,
+  .risk-detail-grid,
+  .sla-summary,
+  .workload-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1745,7 +2081,10 @@ rect[tabindex]:focus-visible {
   .unit-details,
   .report-item,
   .composition-item,
-  .region-row {
+  .region-row,
+  .automation-row,
+  .capacity-row,
+  .bottleneck-row {
     grid-template-columns: 1fr;
   }
 
@@ -1791,6 +2130,7 @@ rect[tabindex]:focus-visible {
   }
 
   .revenue-controls,
+  .operations-controls,
   .table-filters,
   .export-menu {
     display: grid;
