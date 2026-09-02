@@ -190,8 +190,8 @@ The repository includes a standalone CodePen-friendly export:
 ```text
 codepen/
   index.html
-  styles.css
-  app.js
+  style.css
+  script.js
 ```
 
 The CodePen demo is independent from the production React/Vite app. It uses plain browser JavaScript, inline mock data, no JSX, no module imports, no external scripts, and no local application imports.
