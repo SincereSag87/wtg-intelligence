@@ -1,3 +1,7 @@
+(() => {
+if (window.__WTG_CODEPEN_DEMO_LOADED__) return;
+window.__WTG_CODEPEN_DEMO_LOADED__ = true;
+
 const state = {
   page: "Overview",
   toast: "CodePen demo loaded.",
@@ -69,7 +73,7 @@ const insights = [
   { title: "Forecast Confidence Increased", area: "Forecasting", priority: "Medium", impact: "+2.4 pts", confidence: "94%", entity: "Quarter Forecast", why: "Pipeline reliability and retention stability improved confidence.", signals: ["Pipeline reliability 91%", "Retention stability 94%", "Forecast accuracy 96.2%"], recommendation: "Share the forecast brief with leadership.", view: "Forecasting" }
 ];
 
-const root = document.getElementById("root");
+let root = null;
 
 function esc(value) {
   return String(value).replace(/[&<>"']/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" })[char]);
@@ -292,6 +296,7 @@ function renderPage() {
 }
 
 function render() {
+  if (!root) return;
   root.innerHTML = `<div class="shell">
     <aside class="side ${state.mobileNav ? "open" : ""}">
       <div class="brand"><div class="mark">WTG</div><div><strong>WTG Intelligence</strong><span>See clearly. Decide faster.</span></div></div>
@@ -399,4 +404,14 @@ function runCommand(command) {
   }
 }
 
-render();
+function boot() {
+  root = document.getElementById("root");
+  render();
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", boot, { once: true });
+} else {
+  boot();
+}
+})();
