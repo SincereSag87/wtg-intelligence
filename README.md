@@ -194,7 +194,7 @@ codepen/
   app.js
 ```
 
-The CodePen demo is independent from the production React/Vite app. It uses CDN React imports, inline mock data, no JSX, and no local application imports.
+The CodePen demo is independent from the production React/Vite app. It uses plain browser JavaScript, inline mock data, no JSX, no module imports, no external scripts, and no local application imports.
 
 ## Dribbble
 
