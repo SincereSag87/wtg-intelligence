@@ -183,7 +183,7 @@ Screenshots are intentionally not fabricated. Add verified captures to `docs/scr
 
 ## CodePen
 
-Live CodePen Demo: Coming soon
+Live CodePen Demo: https://musical-shadow-scorpion.codepen.app
 
 The repository includes a standalone CodePen-friendly export:
 
